@@ -24,7 +24,7 @@ namespace Lab
             this.globalMin = double.MaxValue;
             this.globalMinIndex = -1;
 
-            StartThreads(); // без Join
+            StartThreads(); 
         }
 
         private void StartThreads()
@@ -41,7 +41,7 @@ namespace Lab
                     CollectMin(threadId, result.Value, result.Index);
                 });
 
-                thread.Start(); // запустити — і не чекати Join
+                thread.Start(); 
             }
         }
 
@@ -61,7 +61,7 @@ namespace Lab
                 finishedThreadCount++;
                 if (finishedThreadCount >= threadCount)
                 {
-                    Monitor.PulseAll(lockObject); // пробудити очікування
+                    Monitor.PulseAll(lockObject); 
                 }
             }
         }
